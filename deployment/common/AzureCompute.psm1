@@ -494,7 +494,7 @@ function Set-VirtualMachineExtensionIfNotInstalled {
     if ($extension) {
         Add-LogMessage -Level InfoSuccess "Extension '$type' is already installed on VM '$($VM.Name)'."
     } else {
-        foreach ($i in 1..5) {
+        foreach ($i in 1..50) {
             try {
                 $null = Set-AzVMExtension -EnableAutomaticUpgrade $EnableAutomaticUpgrade `
                                           -ExtensionName $type `
